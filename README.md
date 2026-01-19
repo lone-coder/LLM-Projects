@@ -1,2 +1,2 @@
 # LLM-Projects
-Various projects/startup ideas that I have worked on for 
+Various projects/startup ideas on which I have worked.

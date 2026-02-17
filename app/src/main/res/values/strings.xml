@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anxiety Monitor</string>
+
+    <!-- ADD MISSING STRING that AndroidManifest references -->
+    <string name="cbt_prompt_title">Thought Analysis</string>
+
+    <!-- Main Activity -->
+    <string name="connection_status">Connection Status</string>
+    <string name="galaxy_watch">Galaxy Watch</string>
+    <string name="connecting">Connecting…</string>
+    <string name="connected">Connected and monitoring</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="no_data">Connected - waiting for data</string>
+    <string name="permission_denied">Health permissions required</string>
+    <string name="no_data_placeholder">--</string>
+
+    <!-- ADD MISSING STRINGS for the AI/analysis features -->
+    <string name="analyzing">Analyzing…</string>
+
+    <!-- Calibration -->
+    <string name="baseline_calibration">Baseline Calibration</string>
+    <string name="waiting_for_data">Waiting for Galaxy Watch data…</string>
+    <string name="collecting_data">Collecting baseline data…</string>
+    <string name="calibrating">Analyzing your patterns…</string>
+    <string name="calibration_complete">Personalized baselines ready!</string>
+    <string name="calibration_error">Calibration error - restart app</string>
+
+    <!-- Biometric Readings -->
+    <string name="current_readings">Current Readings</string>
+    <string name="heart_rate_bpm">BPM</string>
+    <string name="hrv_label">HRV</string>
+    <string name="temperature_celsius">°C</string>
+
+    <!-- Actions -->
+    <string name="journal">Journal</string>
+    <string name="view_entries">View entries</string>
+    <string name="settings">Settings</string>
+    <string name="configure">Configure</string>
+
+    <!-- CBT Activity -->
+    <string name="thought_check">Thought Check</string>
+    <string name="analyze_together">Let\'s analyze your thoughts together</string>
+    <string name="negative_thoughts_prompt">Are you experiencing negative thoughts right now?</string>
+    <string name="share_thoughts_hint">Share what\'s on your mind…</string>
+    <string name="skip">Skip</string>
+    <string name="analyze_thought">Analyze Thought</string>
+    <string name="save_to_journal">Save to Journal</string>
+    <string name="journal_saved">Journal entry saved securely</string>
+
+    <!-- Biometric Authentication -->
+    <string name="auth_title">Authenticate to save journal entry</string>
+    <string name="auth_subtitle">Use your fingerprint to secure your thoughts</string>
+    <string name="auth_cancel">Cancel</string>
+    <string name="auth_failed">Authentication failed</string>
+
+    <!-- Notifications -->
+    <string name="anxiety_detected_title">Anxiety Pattern Detected</string>
+    <string name="anxiety_detected_text">Your biometric data suggests elevated anxiety levels</string>
+    <string name="check_thoughts_action">Check Thoughts</string>
+    <string name="monitoring_active">Monitoring active</string>
+    <string name="monitoring_description">Monitoring your Galaxy Watch for anxiety patterns</string>
+
+    <!-- Permissions -->
+    <string name="health_permission_required">Health permissions are required for monitoring</string>
+    <string name="notification_permission_required">Notification permission is required for alerts</string>
+
+    <!-- Errors -->
+    <string name="initialization_failed">Initialization failed</string>
+    <string name="ai_model_failed">AI model failed to load</string>
+    <string name="monitoring_failed">Failed to start monitoring</string>
+    <string name="analysis_failed">Analysis failed</string>
+    <string name="save_failed">Failed to save</string>
+    <string name="unable_to_analyze">Unable to analyze thought - please try again</string>
+
+    <!-- Features Coming Soon -->
+    <string name="journal_coming_soon">Journal feature coming soon!</string>
+    <string name="settings_coming_soon">Settings feature coming soon!</string>
+
+    <!-- Progress -->
+    <string name="readings_collected_format">%1$d/%2$d readings collected</string>
+    <string name="events_today_format">Active - %1$d events today</string>
+
+    <!-- Cognitive Distortions -->
+    <string name="all_or_nothing_thinking">All-or-Nothing Thinking</string>
+    <string name="overgeneralization">Overgeneralization</string>
+    <string name="mental_filter">Mental Filter</string>
+    <string name="disqualifying_positive">Disqualifying the Positive</string>
+    <string name="jumping_to_conclusions">Jumping to Conclusions</string>
+    <string name="magnification">Magnification</string>
+    <string name="emotional_reasoning">Emotional Reasoning</string>
+    <string name="should_statements">Should Statements</string>
+    <string name="labeling">Labeling</string>
+    <string name="personalization">Personalization</string>
+
+    <!-- Cognitive Distortion Explanations -->
+    <string name="explanation_all_or_nothing">You\'re thinking in extremes - things are either perfect or complete failures. Try to see the middle ground.</string>
+    <string name="explanation_overgeneralization">You\'re making broad conclusions from a single event. One instance doesn\'t define everything.</string>
+    <string name="explanation_mental_filter">You\'re focusing only on the negative aspects while ignoring the positives. Try to see the whole picture.</string>
+    <string name="explanation_disqualifying_positive">You\'re dismissing positive experiences as if they don\'t count. They do matter and are valid.</string>
+    <string name="explanation_jumping_to_conclusions">You\'re making assumptions without evidence. Try to gather facts before concluding.</string>
+    <string name="explanation_magnification">You\'re making things seem worse than they actually are. Try to put things in perspective.</string>
+    <string name="explanation_emotional_reasoning">Your feelings are valid, but they don\'t always reflect reality. Emotions can be misleading.</string>
+    <string name="explanation_should_statements">You\'re setting unrealistic expectations. Try replacing \'should\' with \'could\' or \'would like to\'.</string>
+    <string name="explanation_labeling">You\'re defining yourself by a single action or trait. You are much more complex than any single label.</string>
+    <string name="explanation_personalization">You\'re taking responsibility for things outside your control. Not everything is about you or your fault.</string>
+
+    <!-- Distortion result format -->
+    <string name="distortion_result">This appears to be %1$s.\n\n%2$s</string>
+
+    <!-- Model Download Dialog -->
+    <string name="ai_model_required_title">AI Model Required</string>
+    <string name="ai_model_download_prompt">This app uses an AI model (555MB) for thought analysis. Would you like to download it now?\n\nNote: This will use mobile data if WiFi is not available.</string>
+    <string name="download">Download</string>
+    <string name="later">Later</string>
+    <string name="downloading_ai_model_title">Downloading AI Model</string>
+    <string name="downloading_progress_format">Downloading… %1$s%%</string>
+    <string name="download_failed_title">Download Failed</string>
+    <string name="download_failed_message">Failed to download the AI model. Please check your internet connection and try again.</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Data Setup Activity -->
+    <string name="load_data">Load Data</string>
+    <string name="continue_text">Continue</string>
+</resources>

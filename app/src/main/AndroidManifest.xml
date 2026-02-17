@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Network permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- health and sensor permissions -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <!-- Samsung health permissions -->
+    <uses-permission android:name="com.samsung.android.providers.health.permission.READ" />
+    <uses-permission android:name="com.samsung.android.providers.health.permission.WRITE" />
+
+    <!-- Samsung health Sensor SDK permissions -->
+    <uses-permission android:name="com.samsung.android.healthsensor.permission.USE_SENSOR" />
+    <uses-permission android:name="com.samsung.wearable.permission.HEALTH_SENSOR" />
+
+    <!-- health Connect permissions - UPDATED for version 1.0.0-alpha11 compatibility -->
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE_VARIABILITY"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.health.READ_SKIN_TEMPERATURE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.health.READ_STEPS"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.health.READ_SPEED"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.health.READ_DISTANCE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
+    <!-- Foreground service permissions -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Wearable permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Biometric authentication -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <!-- MOVED: Queries must be outside application tag -->
+    <queries>
+        <package android:name="com.google.android.apps.healthdata" />
+        <package android:name="com.sec.android.app.shealth" />
+    </queries>
+
+    <application
+        android:name=".AnxietyMonitorApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AnxietyMonitor"
+        tools:targetApi="31">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Data Setup Activity -->
+        <activity
+            android:name=".ui.DataSetupActivity"
+            android:theme="@style/Theme.AnxietyMonitor"
+            android:screenOrientation="portrait"
+            android:label="Setup" />
+
+        <!-- CBT Prompt Activity -->
+        <activity
+            android:name=".ui.CbtPromptActivity"
+            android:label="@string/cbt_prompt_title"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Background Monitoring Service -->
+        <service
+            android:name=".service.AnxietyMonitoringBackgroundService"
+            android:exported="false"
+            android:foregroundServiceType="health" />
+
+        <!-- Wearable Listener Service -->
+        <service
+            android:name=".service.AnxietyDataListenerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <data
+                    android:scheme="wear"
+                    android:host="*" />
+            </intent-filter>
+        </service>
+
+        <!-- health Connect permissions activity alias -->
+        <activity-alias
+            android:name=".HealthConnectPermissions"
+            android:exported="true"
+            android:targetActivity=".ui.MainActivity"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Samsung health SDK configuration -->
+        <meta-data
+            android:name="com.samsung.android.health.permission.read"
+            android:value="com.samsung.health.heart_rate;com.samsung.health.heart_rate.hrv;com.samsung.health.temperature" />
+
+        <!-- Disable automatic WorkManager initialization -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+
+    </application>
+
+</manifest>

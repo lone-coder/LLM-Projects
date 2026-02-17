@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Wear OS feature -->
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Samsung health Sensor SDK permissions -->
+    <uses-permission android:name="com.samsung.android.healthsensor.permission.USE_SENSOR" />
+    <uses-permission android:name="com.samsung.wearable.permission.HEALTH_SENSOR" />
+
+    <!-- Network permissions for data sync -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+
+        <!-- Wear OS library -->
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!-- Standalone app -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="false" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Monitoring Service -->
+        <service
+            android:name=".service.SensorMonitoringService"
+            android:exported="false"
+            android:foregroundServiceType="health|dataSync" />
+
+        <!-- Capability for phone app discovery -->
+        <meta-data
+            android:name="com.google.android.wearable.capabilities"
+            android:resource="@xml/wear_capabilities" />
+
+    </application>
+
+</manifest>

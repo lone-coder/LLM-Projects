@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Card styles -->
+    <style name="CardView.Primary" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <!-- Text styles -->
+    <style name="TextAppearance.AnxietyMonitor.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.AnxietyMonitor.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.AnxietyMonitor.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.AnxietyMonitor.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- Button styles -->
+    <style name="Button.AnxietyMonitor.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/accent_color</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="Button.AnxietyMonitor.Secondary" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- EditText styles -->
+    <style name="EditText.AnxietyMonitor.Primary" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+</resources>

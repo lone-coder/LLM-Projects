@@ -1,0 +1,5 @@
+*.bin
+*.gguf
+*.pth
+*.h5
+large_models/

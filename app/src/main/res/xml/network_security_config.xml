@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- Only allow HTTPS connections -->
+        <domain includeSubdomains="true">api.yourcompany.com</domain>
+    </domain-config>
+
+    <!-- Prevent network traffic on debug builds except for development servers -->
+    <debug-overrides>
+        <trust-anchors>
+            <!-- Trust user-added CAs for debugging -->
+            <certificates src="user"/>
+            <certificates src="system"/>
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

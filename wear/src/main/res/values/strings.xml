@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Anxiety Monitor</string>
+
+    <!-- Main Screen -->
+    <string name="start_monitoring">Start Monitoring</string>
+    <string name="stop_monitoring">Stop Monitoring</string>
+    <string name="waiting_for_data">Waiting for data…</string>
+
+    <!-- Connection Status -->
+    <string name="phone_connected">Phone Connected</string>
+    <string name="watch_ready">Watch Ready</string>
+    <string name="disconnected">Disconnected</string>
+
+    <!-- Biometric Labels -->
+    <string name="heart_rate">Heart Rate</string>
+    <string name="hrv_ibi">HRV (IBI)</string>
+    <string name="skin_temp">Skin Temp</string>
+    <string name="activity">Activity</string>
+
+    <!-- Activity Levels -->
+    <string name="resting">Resting</string>
+    <string name="light_activity">Light Activity</string>
+    <string name="moderate_activity">Moderate Activity</string>
+    <string name="high_activity">High Activity</string>
+    <string name="unknown">Unknown</string>
+
+    <!-- Notifications -->
+    <string name="monitoring_biometrics">Monitoring biometrics</string>
+    <string name="monitoring_active">Monitoring active</string>
+    <string name="elevated_stress_detected">Elevated Stress Detected</string>
+</resources>

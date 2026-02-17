@@ -1,4 +1,4 @@
-1. TribeScout (Community Discovery Platform)
+TribeScout (Community Discovery Platform)
 The Opportunity: The new pricing of Meetup.com, which dominates the market for finding
 offline interest groups, has pushed organizers away, creating a market gap.
 
